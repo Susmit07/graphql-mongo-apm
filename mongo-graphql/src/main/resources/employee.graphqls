@@ -1,0 +1,22 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Query {
+	allEmployees: [Employee]
+	employee (employeeId: String): Employee
+}
+
+type Mutation {
+    addEmployee (name: String!, age: Int!, address: String!): Boolean
+    updateEmployee(employeeId: String!, age: String, address: String): Boolean
+    deleteEmployee(employeeId: String!): Boolean
+}
+
+type Employee {
+	employeeId: String
+	name: String
+	age: Int
+	address: String
+}
